@@ -6,16 +6,19 @@ import Section from 'components/Section/Section';
 const FeedbackOptions = props => {
   return (
     <Section title="Plaese Leave feedback">
-      {props.options.map(option => (
-        <button
-          key={option.id}
-          label={option.label.toLowerCase()}
-          onClick={props.onLeaveFeedback}
-          type="button"
-        >
-          {option.label}
-        </button>
-      ))}
+      <div className={css.container}>
+        {props.options.map(option => (
+          <button
+            key={option.id}
+            label={option.label.toLowerCase()}
+            onClick={props.onLeaveFeedback}
+            type="button"
+            className={css.btn}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
     </Section>
   );
 };

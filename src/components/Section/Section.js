@@ -4,8 +4,8 @@ import React from 'react';
 
 const Section = props => {
   return (
-    <div>
-      <h1>{props.title}</h1>
+    <div className={css.section}>
+      <h1 className={css.section__title}>{props.title}</h1>
       {props.children}
     </div>
   );

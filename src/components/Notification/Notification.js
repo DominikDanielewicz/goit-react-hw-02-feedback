@@ -3,7 +3,11 @@ import css from './Notification.module.css';
 import propTypes from 'prop-types';
 
 const Notification = props => {
-  return <h2>{props.message}</h2>;
+  return (
+    <div className={css.notification}>
+      <h2 className={css.notification__message}>{props.message}</h2>
+    </div>
+  );
 };
 
 Notification.propTypes = {

@@ -6,11 +6,15 @@ import Section from 'components/Section/Section';
 const Statistics = props => {
   return (
     <Section title="Statistics">
-      <p>Good: {props.good}</p>
-      <p>Neutral: {props.neutral}</p>
-      <p>Bad: {props.bad}</p>
-      <p>Total: {props.total}</p>
-      <p>Positive feedback: {props.positivePercentage}</p>
+      <div className={css.container}>
+        <p className={css.paragraph}>Good: {props.good}</p>
+        <p className={css.paragraph}>Neutral: {props.neutral}</p>
+        <p className={css.paragraph}>Bad: {props.bad}</p>
+        <p className={css.paragraph}>Total: {props.total}</p>
+        <p className={css.paragraph}>
+          Positive feedback: {props.positivePercentage}%
+        </p>
+      </div>
     </Section>
   );
 };
@@ -20,7 +24,7 @@ Statistics.propTypes = {
   neutral: propTypes.number.isRequired,
   bad: propTypes.number.isRequired,
   total: propTypes.number.isRequired,
-  positivePercentage: propTypes.number.isRequired,
+  positivePercentage: propTypes.string.isRequired,
 };
 
 export default Statistics;
