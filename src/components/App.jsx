@@ -21,19 +21,9 @@ class App extends Component {
 
   handleClick = e => {
     const label = e.target.innerText.toLowerCase();
-    if (label === 'good') {
-      this.setState((state, props) => ({
-        good: state.good + props.step,
-      }));
-    } else if (label === 'neutral') {
-      this.setState((state, props) => ({
-        neutral: state.neutral + props.step,
-      }));
-    } else if (label === 'bad') {
-      this.setState((state, props) => ({
-        bad: state.bad + props.step,
-      }));
-    }
+    this.setState((prevState, props) => ({
+      [label]: prevState[label] + props.step,
+    }));
   };
 
   countTotalFeedback = () => {
